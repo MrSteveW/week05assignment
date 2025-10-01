@@ -16,8 +16,15 @@ app.get("/", (req, res) => {
 });
 
 app.get("/wines", async (req, res) => {
-  const wines = await db.query("SELECT grape_variety FROM wines");
-  res.status(200).json(wines.rows);
+  try {
+    const wines = await db.query(
+      "SELECT * FROM wines ORDER BY grape_variety ASC, country ASC"
+    );
+    res.status(200).json(wines.rows);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Failed to fetch wines" });
+  }
 });
 
 app.get("/details/:grape_variety", async (req, res) => {
