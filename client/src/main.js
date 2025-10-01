@@ -9,7 +9,7 @@ async function fetchData() {
     displayWines(data);
   } catch (err) {
     console.error(err);
-    wineContainer.textContent = "⚠️ Could not load wines.";
+    wineContainer.textContent = "Could not load wines.";
   }
 }
 
