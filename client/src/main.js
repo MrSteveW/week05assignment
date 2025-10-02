@@ -51,19 +51,30 @@ async function handleSearchWine(grape_variety) {
       wineDiv.className = "wine-item";
 
       Object.entries(wine).forEach(([key, value]) => {
-        // == strip off id field
+        // == strip off id & notes fields
         if (key === "id") return;
-
-        const div = document.createElement("div");
-        div.className = `wine-${key}`;
-        if (Array.isArray(value)) {
-          div.innerHTML = `<strong>${key}:</strong> ${value.join(", ")}`;
+        if (key === "notes") return;
+        if (key === "price") {
+          const div = document.createElement("div");
+          div.className = `wine-${key}`;
+          div.textContent = `£${value}`;
+          wineDiv.appendChild(div);
+        } else if (key == "rating") {
+          const div = document.createElement("div");
+          div.className = `wine-${key}`;
+          div.textContent = `${value} / 100`;
+          wineDiv.appendChild(div);
         } else {
-          div.innerHTML = `<strong>${key}:</strong> ${value}`;
+          const div = document.createElement("div");
+          div.className = `wine-${key}`;
+          div.textContent = `${value}`;
+          wineDiv.appendChild(div);
         }
-        wineDiv.appendChild(div);
       });
-
+      const div = document.createElement("div");
+      div.className = "wine-more";
+      div.textContent = "More";
+      wineDiv.appendChild(div);
       wineContainer.appendChild(wineDiv);
     });
   } catch (error) {

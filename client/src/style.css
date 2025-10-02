@@ -19,7 +19,6 @@ body {
 
 #wine-container {
   height: 70%;
-  background-color: rgb(155, 155, 26);
 }
 
 .wine-card {
@@ -32,10 +31,7 @@ body {
 .wine-card:hover {
   background: #f0f0f0;
 }
-.wine-item {
-  padding: 0.5rem;
-  border-bottom: 1px solid #eee;
-}
+
 .back-btn {
   display: inline-block;
   margin-bottom: 1rem;
