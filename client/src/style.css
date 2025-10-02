@@ -1,5 +1,4 @@
 * {
-  /* overflow: hidden; */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -12,11 +11,11 @@ body {
   justify-content: center;
   align-items: center;
   background-color: darkslategrey;
-  font-family: "Times New Roman", serif;
+  font-family: Libre Baskerville, serif;
 }
 
 #phone-container {
-  background-color: rgb(231, 211, 103);
+  background-color: beige;
   height: 100%;
   width: 100%;
   background-blend-mode: multiply;
@@ -63,6 +62,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  flex-direction: column wrap;
   gap: 16px;
   flex-grow: 1;
   margin-top: 8px;
@@ -71,12 +71,16 @@ body {
   padding-bottom: 10px; /* Add some padding at bottom */
 }
 
+.backdiv {
+  height: 10%;
+}
 .wine-card {
   padding: 0.8rem;
   border: 1px solid #ccc;
   border-radius: 8px;
   cursor: pointer;
   transition: background 0.2s;
+  font-size: 1rem;
 }
 .wine-card:hover {
   background: #f0f0f0;
@@ -100,8 +104,8 @@ body {
 
 #footer {
   display: flex;
-  justify-content: center;
-  gap: 24px;
+  justify-content: space-evenly;
+  /* gap: 24px; */
   padding: 5px;
   position: fixed;
   bottom: 0px;
@@ -120,9 +124,8 @@ body {
   color: black;
 }
 
-@media only screen and (min-width: 415px) {
+@media only screen and (min-width: 450px) {
   #phone-container {
-    background-color: beige;
     height: 90%;
     width: 20%;
   }
