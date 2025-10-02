@@ -1,5 +1,8 @@
 * {
   overflow: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -9,16 +12,45 @@ body {
   justify-content: center;
   align-items: center;
   background-color: darkslategrey;
+  font-family: "Times New Roman", serif;
 }
 
 #phone-container {
-  background-color: beige;
+  background-color: rgb(231, 211, 103);
   height: 100%;
   width: 100%;
+  background-blend-mode: multiply;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#header {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 20%;
+  border-radius: 50%;
+}
+
+.title {
+  font-family: cursive;
+  font-size: 32px;
+  color: black;
+  flex-grow: 1;
+  text-align: center;
 }
 
 #wine-container {
   height: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  flex-grow: 1;
+  margin-top: 8px;
 }
 
 .wine-card {
@@ -36,11 +68,29 @@ body {
   display: inline-block;
   margin-bottom: 1rem;
   padding: 0.5rem 1rem;
-  background: #007bff;
+  background: #800000;
   color: white;
   border-radius: 6px;
   cursor: pointer;
   text-decoration: none;
+  font-weight: bold;
+}
+
+.back-btn:hover {
+  background: #9d6363;
+}
+
+#footer {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 16px;
+}
+
+#footer a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: black;
 }
 
 @media only screen and (min-width: 415px) {
