@@ -38,11 +38,14 @@ async function handleSearchWine(grape_variety) {
     wineContainer.textContent = ""; // Clear existing wines
 
     // === Add back button
+    const backdiv = document.createElement("div");
+    backdiv.className = "backdiv";
+    wineContainer.appendChild(backdiv);
     const backBtn = document.createElement("div");
     backBtn.textContent = "← Back to list";
     backBtn.className = "back-btn";
     backBtn.onclick = fetchData;
-    wineContainer.appendChild(backBtn);
+    backdiv.appendChild(backBtn);
 
     // === Show each wine detail
     data.forEach((wine) => {
