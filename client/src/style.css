@@ -1,5 +1,5 @@
 * {
-  overflow: hidden;
+  /* overflow: hidden; */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -22,12 +22,27 @@ body {
   background-blend-mode: multiply;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  background-image: url("/assets/winebg20.png");
+  position: relative; /* Keep this for containment */
+}
+
+#phone-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in Chrome, Safari, Opera */
+}
+
+#wine-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in Chrome, Safari, Opera */
+}
+
+#wine-container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 #header {
   display: flex;
   align-items: center;
+  height: 10%;
 }
 
 .logo {
@@ -36,21 +51,24 @@ body {
 }
 
 .title {
-  font-family: cursive;
   font-size: 32px;
   color: black;
   flex-grow: 1;
   text-align: center;
+  font-family: Allura, sans-serif;
 }
 
 #wine-container {
-  height: 70%;
+  height: calc(80% - 60px); /* Adjust for footer height */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 16px;
   flex-grow: 1;
   margin-top: 8px;
+  overflow-y: scroll; /* Enable scrolling */
+  overflow-x: hidden; /* Hide horizontal scroll if needed */
+  padding-bottom: 10px; /* Add some padding at bottom */
 }
 
 .wine-card {
@@ -84,7 +102,16 @@ body {
   display: flex;
   justify-content: center;
   gap: 24px;
-  padding: 16px;
+  padding: 5px;
+  position: fixed;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 10%;
+  background-color: beige;
+  width: 100%;
+  max-width: inherit;
+  z-index: 1000;
 }
 
 #footer a {
@@ -98,5 +125,11 @@ body {
     background-color: beige;
     height: 90%;
     width: 20%;
+  }
+
+  #footer {
+    width: 20%;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
