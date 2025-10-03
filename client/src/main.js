@@ -1,10 +1,11 @@
 // === Setup constants and any DOM elements
 const wineContainer = document.getElementById("wine-container");
+const server_url = "https://week05assignment-server.onrender.com";
 
 // === Fetch and display the list of wines
 async function fetchData() {
   try {
-    const response = await fetch("http://localhost:8080/wines");
+    const response = await fetch(`${server_url}/wines`);
     const data = await response.json();
     displayWines(data);
   } catch (err) {
@@ -31,19 +32,20 @@ function displayWines(data) {
 // === Fetch details by grape variety
 async function handleSearchWine(grape_variety) {
   try {
-    const response = await fetch(
-      `http://localhost:8080/details/${grape_variety}`
-    );
+    const response = await fetch(`${server_url}/details/${grape_variety}`);
     const data = await response.json();
 
     wineContainer.textContent = ""; // Clear existing wines
 
     // === Add back button
+    const backdiv = document.createElement("div");
+    backdiv.className = "backdiv";
+    wineContainer.appendChild(backdiv);
     const backBtn = document.createElement("div");
     backBtn.textContent = "← Back to list";
     backBtn.className = "back-btn";
     backBtn.onclick = fetchData;
-    wineContainer.appendChild(backBtn);
+    backdiv.appendChild(backBtn);
 
     // === Show each wine detail
     data.forEach((wine) => {

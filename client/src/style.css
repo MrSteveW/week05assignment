@@ -1,5 +1,7 @@
 * {
-  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -9,24 +11,76 @@ body {
   justify-content: center;
   align-items: center;
   background-color: darkslategrey;
+  font-family: Libre Baskerville, serif;
 }
 
 #phone-container {
   background-color: beige;
   height: 100%;
   width: 100%;
+  background-blend-mode: multiply;
+  display: flex;
+  flex-direction: column;
+  background-image: url("/assets/winebg20.png");
+  position: relative; /* Keep this for containment */
+}
+
+#phone-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in Chrome, Safari, Opera */
+}
+
+#wine-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in Chrome, Safari, Opera */
 }
 
 #wine-container {
-  height: 70%;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
+#header {
+  display: flex;
+  align-items: center;
+  height: 10%;
+}
+
+.logo {
+  width: 20%;
+  border-radius: 50%;
+}
+
+.title {
+  font-size: 32px;
+  color: black;
+  flex-grow: 1;
+  text-align: center;
+  font-family: Allura, sans-serif;
+}
+
+#wine-container {
+  height: calc(80% - 60px); /* Adjust for footer height */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column wrap;
+  gap: 16px;
+  flex-grow: 1;
+  margin-top: 8px;
+  overflow-y: scroll; /* Enable scrolling */
+  overflow-x: hidden; /* Hide horizontal scroll if needed */
+  padding-bottom: 10px; /* Add some padding at bottom */
+}
+
+.backdiv {
+  height: 10%;
+}
 .wine-card {
   padding: 0.8rem;
   border: 1px solid #ccc;
   border-radius: 8px;
   cursor: pointer;
   transition: background 0.2s;
+  font-size: 1rem;
 }
 .wine-card:hover {
   background: #f0f0f0;
@@ -36,17 +90,49 @@ body {
   display: inline-block;
   margin-bottom: 1rem;
   padding: 0.5rem 1rem;
-  background: #007bff;
+  background: #800000;
   color: white;
   border-radius: 6px;
   cursor: pointer;
   text-decoration: none;
+  font-weight: bold;
 }
 
-@media only screen and (min-width: 415px) {
+.back-btn:hover {
+  background: #9d6363;
+}
+
+#footer {
+  display: flex;
+  justify-content: space-evenly;
+  /* gap: 24px; */
+  padding: 5px;
+  position: fixed;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 10%;
+  background-color: beige;
+  width: 100%;
+  max-width: inherit;
+  z-index: 1000;
+}
+
+#footer a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: black;
+}
+
+@media only screen and (min-width: 450px) {
   #phone-container {
-    background-color: beige;
     height: 90%;
     width: 20%;
+  }
+
+  #footer {
+    width: 20%;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
