@@ -14,10 +14,14 @@ Blessing was our willing volunteer to create our first branch and pull back into
 All team learned how to pull main to our local code base
 Further discussion on Minimum Viable Product
 
+Wednesday
+Dane build initial code block, documentation of steps so that every team member gets clear idea of git branch. Steve is working on front end designing with Louie as well as managing the code workflow. Louie is designing web pages with HTML and CSS. Anjum is creating branch and merging, hunting for images and font to be used for website. Blessing is hunting for images and font to be used for website as well as major technical issue she is facing in her VS code. Steve help out Blessing for solving her technical issue but it didn't workout so Blessing took Sam's and Connor help but it didn't workout too.
+
+Thursday
+Blessing and Steve made a powerpoint slides for our team presentation. Anjum is updating Readme file and powerpoint slides. Louie,Dan and Steve is working on CSS. Dan is working on back-end too.
 😭😭😭😭😭😭😭😭😭
 Things that made us cry...... so may thinsg
 
-=================================================================
 🍷 Wine Selection App
 
 A simple full-stack application to browse, explore, and learn about wines.
@@ -37,7 +41,6 @@ Navigation: Back button to return to main list.
 
 Future: to include option to enter and search on food types/categories for matching wines.
 
-========================================================
 🏗 Tech Stack
 
 Frontend: Vanilla JavaScript, HTML, CSS
@@ -56,7 +59,6 @@ Tools: Vite (for frontend dev), dotenv, cors
 ├── README.md
 └── ...
 
-=====================================================
 ⚙️ Setup & Installation
 
 1. Clone Repository
@@ -112,7 +114,6 @@ Open your browser at http://localhost:5173.
 GET /wines → list all wines (alphabetical by grape_variety, country)
 GET /details/:id → get details of a specific wine by ID
 
-========================================================
 👩‍💻 User Journey
 
 User opens the app and sees the wine list.
@@ -123,7 +124,6 @@ Reads tasting notes & food pairings.
 
 Uses Back button to return to list.
 
-===========================================================
 🔮 Future Improvements
 
 Search by food (/match/:food)
